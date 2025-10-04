@@ -215,7 +215,7 @@ MIT License - Ver [LICENSE](LICENSE) para más detalles.
 - **NASA Weather Prediction Team** - Modelo de Machine Learning
 - **Tu Nombre** - Implementación de la API
 
-## 🎉 ¡Tu API está lista!
+## 🎉 ¡Tu API está lista :D!
 
 Una vez desplegada en Render, tendrás:
 - ✅ **API REST** funcionando 24/7
