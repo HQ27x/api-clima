@@ -15,7 +15,7 @@ CORS(app) # Permite que tu app web llame a esta API
 # ¡¡MUY IMPORTANTE!!
 # 1. Regístrate gratis en https://openweathermap.org/
 # 2. Ve a la sección "API keys" en tu perfil y pega tu clave aquí.
-OPENWEATHERMAP_API_KEY = "b9887004fb83b6baf80ea22a539cc923"
+OPENWEATHERMAP_API_KEY = "PEGA_AQUI_TU_API_KEY_DE_OPENWEATHERMAP"
 
 # --- CARGA DE TODOS TUS MODELOS ENTRENADOS ---
 MODELS = {}
