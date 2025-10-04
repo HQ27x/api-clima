@@ -40,7 +40,7 @@ for var in TARGET_VARIABLES:
 
 # --- FUNCIÓN INTELIGENTE PARA PREPARAR DATOS ---
 def prepare_features_from_live_weather(lat, lng):
-    if not OPENWEATHERMAP_API_KEY or OPENWEATHERMAP_API_KEY == "PEGA_AQUI_TU_API_KEY_DE_OPENWEATHERMAP":
+    if not OPENWEATHERMAP_API_KEY or OPENWEATHERMAP_API_KEY == "b9887004fb83b6baf80ea22a539cc923":
         return None
     try:
         url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lng}&appid={OPENWEATHERMAP_API_KEY}&units=metric"
