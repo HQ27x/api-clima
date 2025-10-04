@@ -1,0 +1,66 @@
+# Configuración para Render.com
+# Este archivo define la configuración de deployment
+
+services:
+  - type: web
+    name: weather-nasa-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.5
+      - key: FLASK_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    healthCheckPath: /health
+    autoDeploy: true
+    branch: main
+    repo: https://github.com/tu-usuario/weather-nasa-api.git
+    region: oregon
+    disk:
+      name: weather-nasa-disk
+      mountPath: /opt/render/project/src
+      sizeGB: 1
+    scaling:
+      minInstances: 1
+      maxInstances: 1
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-XSS-Protection
+        value: 1; mode=block
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains
+    cors:
+      origins:
+        - "*"
+      methods:
+        - GET
+        - POST
+        - OPTIONS
+      headers:
+        - Content-Type
+        - Authorization
+      maxAge: 3600
+    redirects:
+      - from: /api
+        to: /
+        status: 301
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: /*
+    env:
+      - key: RENDER
+        value: true
+      - key: RENDER_EXTERNAL_URL
+        value: https://weather-nasa-api.onrender.com
