@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 
 # ¡IMPORTANTE! Pega aquí tu API Key de OpenWeatherMap
-OPENWEATHERMAP_API_KEY = "9887004fb83b6baf80ea22a539cc923"
+OPENWEATHERMAP_API_KEY = "b9887004fb83b6baf80ea22a539cc923"
 
 # --- ORDEN EXACTO DE CARACTERÍSTICAS DEL ENTRENAMIENTO ---
 # Esta lista DEBE coincidir con el orden que el modelo aprendió.
