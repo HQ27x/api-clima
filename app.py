@@ -96,6 +96,9 @@ def prepare_features(lat, lng):
         logger.error(f"❌ Error preparando características: {e}")
         return None
 
+# Cargar modelo al inicializar la aplicación
+load_model()
+
 @app.route('/')
 def home():
     """Endpoint de bienvenida"""
@@ -405,9 +408,6 @@ def internal_error(error):
     }), 500
 
 if __name__ == '__main__':
-    # Cargar modelo al iniciar
-    load_model()
-    
     # Obtener puerto del entorno (para Render)
     port = int(os.environ.get('PORT', 5000))
     
